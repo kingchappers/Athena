@@ -6,3 +6,5 @@ The project is based on the work I did on my final year project at university. T
 The idea is that this will be useful to form the skeleton of a cyber range, more specific requirements will require further tinkering but this should give users a head start when creating a range.
 
 This is currently a work in progress and will therefore take some time to build and the project will change over time.
+
+![Range pic](rangeDiagram.png)
