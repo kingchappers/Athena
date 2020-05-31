@@ -1,4 +1,18 @@
 version: '3'
 services:
-	dhcp:
-		image: dhcpd
+    dhcp:
+        image: networkboot/dhcpd
+        networks:
+            dockerMacVlanBridge:
+                ipv4_address: 192.168.5.2
+
+# Define networks
+networks:
+    #Defining the macvlan network - this allows docker containers to connect to the network like a physical host.
+    dockerMacVlanBridge:
+        driver: macvlan
+        driver_opts:
+            parent: ens20u1u4.5
+        ipam:
+            config:
+                - subnet: 192.168.5.0/24 
