@@ -5,6 +5,9 @@ services:
         networks:
             dockerMacVlanBridge:
                 ipv4_address: 192.168.5.2
+        volumes:
+            - ./data:/data
+            - ./data/dhcpd.leases:/var/lib/dhcpd/dhcpd.leases
 
 # Define networks
 networks:
