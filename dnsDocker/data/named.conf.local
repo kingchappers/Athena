@@ -1,0 +1,4 @@
+zone "athena.com" {
+	type master;
+	file "/etc/bind/zones/db.athena.com";
+};
