@@ -1,0 +1,20 @@
+version: '3'
+services:
+    bind:
+        image: sameersbn/bind:9.16.1-20200524i
+    container_name: athenaDockerBindDNS
+    networks:
+        dockerMacVlanBridge:
+            ipv4_address: 192.168.5.3
+    volumes:
+        - ./srv/docker/bind:/data
+
+networks:
+    #Defining the macvlan network - this allows docker containers to connect to the network like a physical host.
+    dockerMacVlanBridge:
+        driver: macvlan
+        driver_opts:
+            parent: ens20u1u4.5
+        ipam:
+            config:
+                - subnet: 192.168.5.0/24
