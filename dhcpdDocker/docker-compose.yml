@@ -2,6 +2,7 @@ version: '3'
 services:
     dhcp:
         image: networkboot/dhcpd
+        container_name: athenaDockerDhcpd
         networks:
             dockerMacVlanBridge:
                 ipv4_address: 192.168.5.2
