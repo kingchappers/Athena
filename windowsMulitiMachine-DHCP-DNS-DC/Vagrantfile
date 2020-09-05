@@ -12,8 +12,8 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.define "dc" do |dc|
-    dhcp.vm.box = "kingchappers/windowsServer2016EvalDomainController"
-    dhcp.vm.network "private_network", type: "dhcp"
+    dc.vm.box = "kingchappers/windowsServer2016EvalDomainController"
+    dc.vm.network "private_network", type: "dhcp"
   end
 
 end
