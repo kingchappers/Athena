@@ -1,8 +1,9 @@
 Vagrant.configure("2") do |config|
-  config.vm.box = "base"
+  #config.vm.box = "base"
 
   config.vm.define "dhcp" do |dhcp|
-    dhcp.vm.box = "kingchappers/windows2016EvalDHCP" 
+    dhcp.vm.box = "kingchappers/windows2016EvalDHCP"
+    dhcp.gui = true 
   end 
 
   config.vm.define "dns" do |dns|
