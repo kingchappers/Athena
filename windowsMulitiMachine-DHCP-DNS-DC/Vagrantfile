@@ -10,16 +10,20 @@ Vagrant.configure("2") do |config|
   config.vm.define "dhcp" do |dhcp|
     dhcp.vm.box = "kingchappers/windows2016EvalDHCP"
     dhcp.vm.communicator = "winrm"
+    dhcp.vm.network :hostonly, "172.28.128.4"
   end 
 
   config.vm.define "dns" do |dns|
     dns.vm.box = "kingchappers/windowsServer2016EvalDNS"
     dns.vm.communicator = "winrm"
+    dns.vm.network :bridged
+    dns.vm.network :hostonly, "172.28.128.5"
   end
 
   config.vm.define "dc" do |dc|
     dc.vm.box = "kingchappers/windowsServer2016EvalDomainController"
     dc.vm.communicator = "winrm"
+    dc.vm.network :hostonly, "172.28.128.6"
   end
 
 end
