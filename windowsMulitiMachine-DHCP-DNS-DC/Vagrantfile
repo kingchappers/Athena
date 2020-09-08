@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   #Configure machinges to be on a private network
-  config.vm.network "private_network", type: "dhcp"
+  #config.vm.network "private_network", type: "dhcp"
 
   config.vm.provider "virtualbox" do |v|
     v.gui = true
@@ -10,20 +10,20 @@ Vagrant.configure("2") do |config|
   config.vm.define "dhcp" do |dhcp|
     dhcp.vm.box = "kingchappers/windows2016EvalDHCP"
     dhcp.vm.communicator = "winrm"
-    dhcp.vm.network :hostonly, "172.28.128.4"
+    dhcp.vm.network "private_network", ip: "172.28.128.4"
   end 
 
   config.vm.define "dns" do |dns|
     dns.vm.box = "kingchappers/windowsServer2016EvalDNS"
     dns.vm.communicator = "winrm"
-    dns.vm.network :bridged
-    dns.vm.network :hostonly, "172.28.128.5"
+    dns.vm.network "public_network", bridge: "ens20u1u4"
+    dns.vm.network "private_network", ip: "172.28.128.5"
   end
 
   config.vm.define "dc" do |dc|
     dc.vm.box = "kingchappers/windowsServer2016EvalDomainController"
     dc.vm.communicator = "winrm"
-    dc.vm.network :hostonly, "172.28.128.6"
+    dc.vm.network "private_network", ip: "172.28.128.6"
   end
 
 end
