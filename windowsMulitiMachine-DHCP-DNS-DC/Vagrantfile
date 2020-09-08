@@ -1,7 +1,4 @@
 Vagrant.configure("2") do |config|
-  #Configure machinges to be on a private network
-  #config.vm.network "private_network", type: "dhcp"
-
   config.vm.provider "virtualbox" do |v|
     v.gui = true
     v.memory = 1024
