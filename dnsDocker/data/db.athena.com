@@ -14,3 +14,6 @@ ns1.athena.com.		IN	A	192.168.5.3
 
 dhcp.athena.com.	IN	A	192.168.5.2
 
+mail.athena.com.    IN  A   192.168.6.6
+
+admin.athena.com.   IN  A   192.168.6.6
