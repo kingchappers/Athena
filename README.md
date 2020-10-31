@@ -1,3 +1,7 @@
+# -----------Discontinued-----------
+
+This project has been discontinued. I've recently found out about the GNS3 project, which by and large does everything I'd aimed to do with this project. I've leared a lot doing this project and I'm happy with how far it got even if it's nowhere near complete.
+
 # Athena
 The aim of this project is to allow people to configure and use a cyber range without having to go through the painstaking process of building a virtual network from scratch. In the initial stages I'll be creating a basic docker network, then I'll work on auto configuring some virtual machines, and finally move to make a front-end for the project.
 
